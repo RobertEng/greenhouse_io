@@ -95,8 +95,9 @@ module GreenhouseIo
     end
 
     def get_from_harvest_api(url, options = {})
+      puts permitted_options(options)
       response = get_response(url, {
-        :query => permitted_options(options), 
+        :query => permitted_options(options),
         :basic_auth => basic_auth
       })
 
